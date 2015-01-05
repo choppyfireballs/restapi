@@ -13,7 +13,6 @@ class SudokuController extends BaseController{
         $board = new Board();
         $board->init($input_array);
         $board->solve();
-        
         echo "";
     }
 }
