@@ -9,6 +9,10 @@
 class Board{
     public $board = array();
 
+    private $square_length = '3';
+
+    private $squares = array();
+
     private $template = array(
         '0'=>'1',
         '1'=>'2',
@@ -82,6 +86,22 @@ class Board{
                 }
             }
         }
+        $this->square();
+    }
+
+    public function square(){
+        $count = 1;
+        for($i=0; $i<$this->square_length; $i++){
+            for($j=0; $j<$this->square_length;$i++){
+                for($k=0;$k<$this->square_length;$k++){
+                    for($l=0;$l<$this->square_length;$l++){
+                        $this->squares[$count][] = $this->board[$k][$l];
+                    }
+                }
+                $count++;
+            }
+        }
+        $break = '';
     }
 
     public function square(){
