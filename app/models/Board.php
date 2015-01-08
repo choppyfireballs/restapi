@@ -83,4 +83,9 @@ class Board{
             }
         }
     }
+
+    public function square(){
+        foreach()
+    }
+)
 }
