@@ -25,6 +25,21 @@ class Board{
         '8'=>'9'
     );
     
+    private $square = array(
+        '0'=>array(
+            '0'=>'',
+            '1'=>'',
+            '2'=>''), 
+        '1'=>array(
+            '0'=>'',
+            '1'=>'',
+            '2'=>''), 
+        '2'=>array(
+            '0'=>'',
+            '1'=>'',
+            '2'=>'')
+        );
+    
     private $row = array();
     
     private $collapsed = array();
@@ -57,12 +72,14 @@ class Board{
         }
     }
 
-    public function set_squares(){
-        for($i=0;$i<count($this->board);$i++){
-            if($i  / 3 == 0){
-
+    private function get_column($id){
+        $ret_array = array();
+        foreach($this->board as $row){
+            if(!is_array($row[$id])) {
+                $ret_array[] = $row[$id];
             }
         }
+        return $ret_array;
     }
 
     private function get_row($id){
@@ -103,9 +120,4 @@ class Board{
         }
         $break = '';
     }
-
-    public function square(){
-        foreach()
-    }
-)
 }
