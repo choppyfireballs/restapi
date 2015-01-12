@@ -95,7 +95,7 @@ class Board{
     public function solve(){
         foreach($this->board as $row_number => $row){
             foreach($row as $column_number=>$column){
-                if(!is_array($this->board[$row_number][$column_number])) {
+                if(is_array($this->board[$row_number][$column_number])) {
                     $test_row = $this->get_row($row_number);
                     $test_column = $this->get_column($column_number);
                     $test_array = array_intersect($test_row, $test_column);
@@ -108,12 +108,18 @@ class Board{
 
     public function square(){
         $count = 1;
-        for($i=0; $i<$this->square_length; $i++){
-            for($j=0; $j<$this->square_length;$i++){
-                for($k=0;$k<$this->square_length;$k++){
-                    for($l=0;$l<$this->square_length;$l++){
-                        $this->squares[$count][] = $this->board[$k][$l];
+        for($i=1; $i<$this->square_length +1; $i++){
+            for($j=1; $j<$this->square_length+1;$j++){
+                for($k=$this->square_length*$j-$this->square_length;$k<$this->square_length * $j;$k++){
+                    for($l=$this->square_length*$i-$this->square_length;$l<$this->square_length * $i;$l++){
+                        $test = $this->board[$k][$l];
+                        if(!is_array($this->board[$k][$l])) {
+                            $this->squares[$count][] = $this->board[$k][$l];
+                        }
                     }
+                }
+                if(!isset($this->squares[$count])){
+                    $this->squares[$count] = array();
                 }
                 $count++;
             }
