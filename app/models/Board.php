@@ -93,17 +93,21 @@ class Board{
     }
 
     public function solve(){
+        $is_solved = false;
+        $this->square();
         foreach($this->board as $row_number => $row){
             foreach($row as $column_number=>$column){
                 if(is_array($this->board[$row_number][$column_number])) {
+                    $square = ($this->column_number + 3) / $this->square_length;
+                    $square = 
                     $test_row = $this->get_row($row_number);
                     $test_column = $this->get_column($column_number);
                     $test_array = array_intersect($test_row, $test_column);
+                    $test_array = array_intersect($test_array, $this->squares[])
                     $this->board[$row_number][$column_number] = array_diff($this->template, $test_array);
                 }
             }
         }
-        $this->square();
     }
 
     public function square(){
