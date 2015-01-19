@@ -24,4 +24,8 @@ Route::get('/sudoku',function(){
     return View::make('sudoku');
 });
 
+Route::get('/home',function(){
+    return View::make('hello');
+});
+
 Route::post('solve','SudokuController@solve');
