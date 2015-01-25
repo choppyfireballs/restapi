@@ -84,9 +84,9 @@ class Board{
 
     private function get_row($id){
         $ret_array = array();
-        for($i=0;$i<9;$i++){
+        for($i=0;$i<$this->square_length*$this->square_length;$i++){
             if(!is_array($this->board[$id][$i])){
-                $ret_array[] = $this->board[$id][$i][0];
+                $ret_array[] = $this->board[$id][$i];
             }
         }
         return $ret_array;
@@ -98,11 +98,13 @@ class Board{
         foreach($this->board as $row_number => $row){
             foreach($row as $column_number=>$column){
                 if(is_array($this->board[$row_number][$column_number])) {
-                    $test_row = $this->get_row($row_number);
-                    $test_column = $this->get_column($column_number);
-                    $test_array = array_intersect($test_row, $test_column);
-                    $test_array = array_intersect($test_array, $this->squares[]);
-                    $this->board[$row_number][$column_number] = array_diff($this->template, $test_array);
+                    $square_row = (int) ($row_number / $this->square_length);
+                    $square_column = (int) ($column_number / $this->square_length);
+                    $main_array = $this->get_row($row_number);
+                    $column_array = $this->get_column($column_number);
+                    array_push($main_array, $column_array);
+                    array_push($main_array,$this->squares[$square_row][$square_column]);
+                    $this->board[$row_number][$column_number] = array_diff($this->template, $main_array);
                 }
             }
         }
@@ -110,19 +112,20 @@ class Board{
 
     public function square(){
         $count = 1;
-        for($i=1; $i<$this->square_length +1; $i++){
-            for($j=1; $j<$this->square_length+1;$j++){
-                for($k=$this->square_length*$j-$this->square_length;$k<$this->square_length * $j;$k++){
-                    for($l=$this->square_length*$i-$this->square_length;$l<$this->square_length * $i;$l++){
-                        $test = $this->board[$k][$l];
+        for($i=0; $i<$this->square_length; $i++){
+            for($j=0; $j<$this->square_length;$j++){
+                $test = ($j+1) * $this->square_length -1;
+                for($k=$this->square_length*($i+1) - $this->square_length;$k<=($i+1) * $this->square_length -1;$k++){
+                    for($l=$this->square_length*($j+1)-$this->square_length;$l<=($j+1) * $this->square_length -1;$l++){
                         if(!is_array($this->board[$k][$l])) {
-                            $this->squares[$i][$j] = $this->board[$k][$l];
+                            $this->squares[$i][$j][] = $this->board[$k][$l];
                         }
                     }
                 }
-                if(!isset($this->squares[$count])){
-                    $this->squares[$count] = array();
+                if(!isset($this->squares[$i][$j])){
+                    $this->squares[$i][$j] = array();
                 }
+                $count++;
             }
         }
         $break = '';
