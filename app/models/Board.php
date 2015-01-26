@@ -52,7 +52,6 @@ class Board{
         if(isset($param)){
             foreach($this->board as $key=>$value){
                 foreach($this->board[$key] as $option_key=>$option_value){
-                    print_r('row:'.$key.': option_key :'.$option_key); echo"<br />";
                     if(!empty($param[$key][$option_key])){
                         $this->board[$key][$option_key] = $param[$key][$option_key];
                     }
@@ -69,6 +68,12 @@ class Board{
             foreach($row as $value){
                 $this->collapsed[] = $value;
             }
+        }
+    }
+
+    private function combine_arrays(&$array1, $array2){
+        foreach($array2 as $element){
+            $array1[] = $element;
         }
     }
 
@@ -102,15 +107,19 @@ class Board{
                     $square_column = (int) ($column_number / $this->square_length);
                     $main_array = $this->get_row($row_number);
                     $column_array = $this->get_column($column_number);
-                    array_push($main_array, $column_array);
-                    array_push($main_array,$this->squares[$square_row][$square_column]);
+                    $this->combine_arrays($main_array, $column_array);
+                    $this->combine_arrays($main_array,$this->squares[$square_row][$square_column]);
                     $this->board[$row_number][$column_number] = array_diff($this->template, $main_array);
                 }
             }
         }
+        do{
+            $solved = $this->set_elements();
+        }
+        while(!$solved);
     }
 
-    public function square(){
+    private function square(){
         $count = 1;
         for($i=0; $i<$this->square_length; $i++){
             for($j=0; $j<$this->square_length;$j++){
@@ -128,6 +137,19 @@ class Board{
                 $count++;
             }
         }
-        $break = '';
+    }
+
+    private function set_elements(){
+        $is_solved = true;
+        foreach($this->board as $row=>$row_values){
+            foreach($row_values as $column=>$column_value){
+                if(is_array($this->board[$row][$column]) && count($column_value) == 1){
+                    $this->board[$row][$column] = implode('',$column_value);
+                    $is_solved = false;
+                }
+            }
+        }
+
+        return $is_solved;
     }
 }
