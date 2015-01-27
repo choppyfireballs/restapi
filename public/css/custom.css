@@ -1,0 +1,15 @@
+.cell{
+    border:1px solid grey;
+}
+.right_border{
+    border-right:3px solid black;
+}
+.left_border{
+    border-left:3px solid black;
+}
+.top_border{
+    border-top:3px solid black;
+}
+.bottom_border{
+    border-bottom: 3px solid black;
+}

@@ -99,11 +99,12 @@ class Board{
 
     public function solve(){
         $this->square();
+
         do{
             $this->update();
             $solved = $this->set_elements();
         }
-        while(!$solved);
+        while($solved === 'not_solved');
     }
 
     private function set_elements(){
@@ -112,13 +113,17 @@ class Board{
             foreach($row_values as $column=>$column_value){
                 if(is_array($this->board[$row][$column]) && count($column_value) == 1){
                     $this->board[$row][$column] = implode('',$column_value);
-                    $is_solved = false;
+                    $this->update();
+                    $is_solved = 'not_solved';
                 }
-                /*else if(is_array($this->board[$row][$column]) && count($column_value) > 1){
+                /*else if(is_array($this->board[$row][$column])){
+                    //$is_solved = 'false';
                     $compare = $this->compare_against_square($row,$column);
                     if($compare !== 0){
                         $this->board[$row][$column] = $compare;
-                        $is_solved = false;
+                        if(!$is_solved) {
+                            $is_solved = 'out of options';
+                        }
                     }
                 }*/
             }
@@ -143,12 +148,11 @@ class Board{
         }
     }
 
-    private function set_full_squares(){
+    public function set_full_squares(){
         for($i=0; $i<$this->square_length; $i++){
             for($j=0; $j<$this->square_length;$j++){
                 for($k=$this->square_length*($i+1) - $this->square_length;$k<=($i+1) * $this->square_length -1;$k++){
                     for($l=$this->square_length*($j+1)-$this->square_length;$l<=($j+1) * $this->square_length -1;$l++){
-                        $test = ($k + $this->square_length) % $this->square_length;
                         $this->full_squares[$i][$j][($k+$this->square_length) % $this->square_length][($l+$this->square_length) % $this->square_length] = $this->board[$k][$l];
                     }
                 }
@@ -184,19 +188,22 @@ class Board{
 
         foreach($square as $square_row_key=>$square_row){
             foreach($square_row as $square_column_key=>$current_column_element){
-                if($square_row_key != $row_position || $square_column_key != $column_position){
-                    if(is_array($square[$current_square_row][$current_square_column])){
-                        $possibilites = array_diff($possibilites,$square[$current_square_row][$current_square_column]);
+                if($square_row_key == $row_position && $square_column_key == $column_position){
+                }
+                else{
+                    if(is_array($square[$square_row_key][$square_column_key])){
+                        $compare = $square[$current_square_row][$current_square_column];
+                        $possibilites = array_diff($possibilites,$square[$square_row_key][$square_column_key]);
                         if(count($possibilites) === 0){
                             return 0;
                         }
                     }
                 }
             }
-            if(count($possibilites) == 1){
-                return implode($possibilites);
-            }
-            return 0;
         }
+        if(count($possibilites) == 1){
+            return implode($possibilites);
+        }
+        return 0;
     }
 }
