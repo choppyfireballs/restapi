@@ -2,14 +2,10 @@
 <head>
     <title>Sudoku Solver</title>
     <link rel='stylesheet' href="http://localhost/sudoku/public/css/custom.css">
-</head><?php
+</head><body>
+    <?php 
+    echo $navbar_view;
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-$break = '';
 if(isset($board)){
     foreach($board as $row_key => $row){
         foreach($row as $column_key => $column){
@@ -73,3 +69,6 @@ if(isset($board)){
     echo "<button type='submit' value='submit'>submit</button>";
     echo "</form>";
 }
+?>
+</body>
+    </html>

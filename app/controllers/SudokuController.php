@@ -15,6 +15,6 @@ class SudokuController extends BaseController{
         $board->init($input_array);
         $board->solve();
         $board->set_full_squares();
-        return View::make('sudoku',get_object_vars($board));
+        return View::make('sudoku',get_object_vars($board))->nest('navbar_view','navbar');
     }
 }
