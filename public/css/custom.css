@@ -1,6 +1,11 @@
 .cell{
     border:1px solid grey;
 }
+.board_div{
+    padding-top:50px;
+    width: 450px;
+    margin:auto;
+}
 .right_border{
     border-right:3px solid black;
 }
@@ -12,4 +17,9 @@
 }
 .bottom_border{
     border-bottom: 3px solid black;
+}
+.solve_button{
+    margin-top:15px;
+    float: right;
+    padding-right: 10px;
 }

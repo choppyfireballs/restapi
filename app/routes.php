@@ -21,7 +21,9 @@ Route::get('/welcome',function(){
 });
 
 Route::get('/sudoku',function(){
-    return View::make('sudoku');
+    return View::make('sudoku')
+            ->nest('navbar_view','navbar')
+            ->nest('includes_view','includes');
 });
 
 Route::get('/home',function(){
