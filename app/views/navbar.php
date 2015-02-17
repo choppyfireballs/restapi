@@ -12,7 +12,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav" id="bs-example-navbar-collapse-1">
                     <li>
-                        <?php echo "<a href='http://".$_SERVER['HTTP_HOST']."/sudoku/public/sudoku'>Sudoku <span class='sr-only'></span></a>";?>
+                        <?php echo "<a href='http://".$_SERVER['HTTP_HOST']."/home/public/sudoku'>Sudoku <span class='sr-only'></span></a>";?>
                     </li>
                 </ul>
             </div>
