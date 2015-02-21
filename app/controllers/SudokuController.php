@@ -9,7 +9,6 @@
 class SudokuController extends BaseController{
     
     public function solve(){
-        require_once('/var/www/html/sudoku/app/models/Board.php');
         $input_array = Input::get('sudoku_array');
         $board = new Board();
         $board->init($input_array);

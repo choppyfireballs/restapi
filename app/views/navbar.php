@@ -14,6 +14,9 @@
                     <li>
                         <?php echo "<a href='http://".$_SERVER['HTTP_HOST']."/home/public/sudoku'>Sudoku <span class='sr-only'></span></a>";?>
                     </li>
+		    <li>
+			<?php echo "<a href='http://".$_SERVER['HTTP_HOST']."/home/public/resume'>Resume <span class='sr-only'></span></a>";?>
+    		    </li>
                 </ul>
             </div>
         </div>

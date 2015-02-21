@@ -39,7 +39,7 @@
                         echo "<br />";
                     }
                 }else {
-                    echo "<form action='http://localhost/sudoku/public/solve' method='POST'>";
+                    echo "<form action='http://".Request::server('HTTP_HOST')."/home/public/solve' method='POST'>";
                     for ($i = 0; $i < 9; $i++) {
                         for ($j = 0; $j < 9; $j++) {
                             echo "<input type='text' name='sudoku_array[$i][$j]' style='width:50px;height:50px;' class='cell ";

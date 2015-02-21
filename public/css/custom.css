@@ -18,6 +18,15 @@
 .bottom_border{
     border-bottom: 3px solid black;
 }
+.resume-div{
+    width:900px;
+    height:100%;
+    margin:auto;
+}
+.resume_object{
+    width:100%;
+    height:100%;
+}
 .solve_button{
     margin-top:15px;
     float: right;

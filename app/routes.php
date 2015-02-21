@@ -16,6 +16,12 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('resume',function(){
+	return View::make('resume')
+		->nest('navbar_view','navbar')
+		->nest('includes_view','includes');
+});
+
 Route::get('/welcome',function(){
     return View::make('hello');
 });
