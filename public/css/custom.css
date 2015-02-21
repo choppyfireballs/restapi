@@ -1,0 +1,67 @@
+.cell{
+    border:1px solid grey;
+}
+.board_div{
+    padding-top:50px;
+    width: 450px;
+    margin:auto;
+}
+.bottom_border{
+    border-bottom: 3px solid black;
+}
+.diary-entry-panel{
+    width:60%;
+    margin:auto;
+}
+.diary_panel{
+    width:40%;
+    margin:auto;
+}
+.entry-button{
+    margin-top:15px;
+    float:right;
+}
+.entry-div{
+    width:90%;
+    margin:auto;
+}
+.entry-textarea{
+    width:100%;
+    height:100%;
+}
+.entry-title{
+    width:300px;
+    margin-bottom:10px;
+}
+.new-entry-panel{
+    width:75%;
+    height:600px;
+    margin:auto;
+}
+.right_border{
+    border-right:3px solid black;
+}
+.left_border{
+    border-left:3px solid black;
+}
+.top_border{
+    border-top:3px solid black;
+}
+.resume-div{
+    width:900px;
+    height:100%;
+    margin:auto;
+}
+.resume_object{
+    width:100%;
+    height:100%;
+}
+.solve_button{
+    margin-top:15px;
+    float: right;
+    padding-right: 10px;
+}
+.textarea-input{
+    width:100%;
+    height:100%;
+}

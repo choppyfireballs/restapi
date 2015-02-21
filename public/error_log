@@ -1,0 +1,36 @@
+[20-Feb-2015 03:40:17 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'require_once(/var/www/html/sudoku/app/models/Board.php): failed to open stream: No such file or directory' in /home/davidros/public_html/home/app/controllers/SudokuController.php:12
+Stack trace:
+#0 /home/davidros/public_html/home/app/controllers/SudokuController.php(12): Illuminate\Exception\Handler->handleError(2, 'require_once(/v...', '/home/davidros/...', 12, Array)
+#1 /home/davidros/public_html/home/app/controllers/SudokuController.php(12): SudokuController::solve()
+#2 [internal function]: SudokuController->solve()
+#3 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#4 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('solve', Array)
+#5 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\Control in /home/davidros/public_html/home/app/controllers/SudokuController.php on line 12
+[20-Feb-2015 03:40:17 UTC] PHP Fatal error:  SudokuController::solve(): Failed opening required '/var/www/html/sudoku/app/models/Board.php' (include_path='/home/davidros/public_html/home/vendor/phpseclib/phpseclib/phpseclib:.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/davidros/public_html/home/app/controllers/SudokuController.php on line 12
+[20-Feb-2015 03:40:31 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'require_once(/var/www/html/sudoku/app/models/Board.php): failed to open stream: No such file or directory' in /home/davidros/public_html/home/app/controllers/SudokuController.php:12
+Stack trace:
+#0 /home/davidros/public_html/home/app/controllers/SudokuController.php(12): Illuminate\Exception\Handler->handleError(2, 'require_once(/v...', '/home/davidros/...', 12, Array)
+#1 /home/davidros/public_html/home/app/controllers/SudokuController.php(12): SudokuController::solve()
+#2 [internal function]: SudokuController->solve()
+#3 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#4 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('solve', Array)
+#5 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\Control in /home/davidros/public_html/home/app/controllers/SudokuController.php on line 12
+[20-Feb-2015 03:40:31 UTC] PHP Fatal error:  SudokuController::solve(): Failed opening required '/var/www/html/sudoku/app/models/Board.php' (include_path='/home/davidros/public_html/home/vendor/phpseclib/phpseclib/phpseclib:.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/davidros/public_html/home/app/controllers/SudokuController.php on line 12
+[20-Feb-2015 03:42:02 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'require_once(/var/www/html/sudoku/app/models/Board.php): failed to open stream: No such file or directory' in /home/davidros/public_html/home/app/controllers/SudokuController.php:12
+Stack trace:
+#0 /home/davidros/public_html/home/app/controllers/SudokuController.php(12): Illuminate\Exception\Handler->handleError(2, 'require_once(/v...', '/home/davidros/...', 12, Array)
+#1 /home/davidros/public_html/home/app/controllers/SudokuController.php(12): SudokuController::solve()
+#2 [internal function]: SudokuController->solve()
+#3 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#4 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('solve', Array)
+#5 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\Control in /home/davidros/public_html/home/app/controllers/SudokuController.php on line 12
+[20-Feb-2015 03:42:02 UTC] PHP Fatal error:  SudokuController::solve(): Failed opening required '/var/www/html/sudoku/app/models/Board.php' (include_path='/home/davidros/public_html/home/vendor/phpseclib/phpseclib/phpseclib:.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/davidros/public_html/home/app/controllers/SudokuController.php on line 12
+[20-Feb-2015 03:42:28 UTC] PHP Warning:  Uncaught exception 'ErrorException' with message 'require_once(/var/www/html/home/app/models/Board.php): failed to open stream: No such file or directory' in /home/davidros/public_html/home/app/controllers/SudokuController.php:12
+Stack trace:
+#0 /home/davidros/public_html/home/app/controllers/SudokuController.php(12): Illuminate\Exception\Handler->handleError(2, 'require_once(/v...', '/home/davidros/...', 12, Array)
+#1 /home/davidros/public_html/home/app/controllers/SudokuController.php(12): SudokuController::solve()
+#2 [internal function]: SudokuController->solve()
+#3 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/Controller.php(231): call_user_func_array(Array, Array)
+#4 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(93): Illuminate\Routing\Controller->callAction('solve', Array)
+#5 /home/davidros/public_html/home/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php(62): Illuminate\Routing\Controlle in /home/davidros/public_html/home/app/controllers/SudokuController.php on line 12
+[20-Feb-2015 03:42:28 UTC] PHP Fatal error:  SudokuController::solve(): Failed opening required '/var/www/html/home/app/models/Board.php' (include_path='/home/davidros/public_html/home/vendor/phpseclib/phpseclib/phpseclib:.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/davidros/public_html/home/app/controllers/SudokuController.php on line 12
