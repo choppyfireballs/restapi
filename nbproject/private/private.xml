@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/var/www/html/home/app/views/diary_list.php</file>
-            <file>file:/var/www/html/home/app/views/diary_entry.php</file>
-            <file>file:/var/www/html/home/app/controllers/SudokuController.php</file>
-            <file>file:/var/www/html/home/app/models/Diary.php</file>
-            <file>file:/var/www/html/home/app/routes.php</file>
-            <file>file:/var/www/html/home/app/controllers/DiaryController.php</file>
-            <file>file:/var/www/html/home/app/views/diary_new.php</file>
-            <file>file:/var/www/html/home/public/index.php</file>
-            <file>file:/var/www/html/home/app/models/Board.php</file>
-            <file>file:/var/www/html/home/public/css/custom.css</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

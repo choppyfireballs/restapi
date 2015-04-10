@@ -15,6 +15,9 @@
                     . "</div>";
                 }
                 ?>
+		<div>
+		    <a class='btn btn-primary' href='http://<?= Request::server('HTTP_HOST')?>/home/public/new_entry'> New Entry</a>
+		</div>
             </div>
         </div>
     </body>

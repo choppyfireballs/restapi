@@ -11,41 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
-
-Route::get('resume',function(){
-	return View::make('resume')
-		->nest('navbar_view','navbar')
-		->nest('includes_view','includes');
-});
-
-Route::get('/welcome',function(){
-    return View::make('hello');
-});
-
-Route::get('/sudoku',function(){
-    return View::make('sudoku')
-            ->nest('navbar_view','navbar')
-            ->nest('includes_view','includes');
-});
-
-Route::get('/home',function(){
-    return View::make('hello');
-});
-
-Route::post('solve','SudokuController@solve');
-
-Route::get('diary', array('as'=>'diary','uses'=>'DiaryController@display'));
-
-Route::get('entry/{id}','DiaryController@display_entry');
-
-Route::get('new_entry',function(){
-    return View::make('diary_new')
-            ->nest('navbar_view','navbar')
-            ->nest('includes_view','includes');
-});
-
-Route::post('new_entry',array('as'=>'new_diary_entry','uses'=>'DiaryController@new_entry'));
+//Route::post('favorite',array('as'=>'userFavorite','uses'=>'UserController@test_new_function'));
+Route::post('user/{userid}/visits','UserController@add_location');
+Route::get('user/{userid}/visits',array('as'=>'user','uses'=>'UserController@get_locations'));
+Route::get('states/{state}/cities','CityController@get_locations');
+Route::get('states/{state}/cities/{city}','CityController@search_by_city');
+Route::post('login', array('as'=>'login','uses'=>'UserController@login'));
+/*Route::any('{all}',function(){
+    //return Response::json(array('message'=>'Invalid request'),401);
+    return 'helloworld';
+});*/
+Route::any('{all}', array('uses' => 'CityController@failed'))->where('all', '.*');

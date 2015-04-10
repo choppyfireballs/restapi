@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'diary',
+	'default' => 'spartz',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -62,12 +62,12 @@ return array(
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
-                'diary' => array(
+                'spartz' => array(
                         'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'diary',
-			'username'  => 'diary',
-			'password'  => '123456789aoeuhtnsgcrl',
+			'database'  => '',
+			'username'  => '',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
